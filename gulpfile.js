@@ -39,6 +39,8 @@ gulp.task('img', function() {
 		.pipe(gulp.dest('dist/img')); 
 });
 
+let autoprefixBrowsers = ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 10', 'IE 11'];
+
 gulp.task('sass', function(){
 	return gulp.src('src/sass/**/*.sass')
 		.pipe(sass({ outputStyle: 'expand' }).on('error', notify.onError()))
@@ -52,7 +54,7 @@ gulp.task('sass', function(){
 			suffix: ".min",
 			prefix: ""
 		}))
-		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(autoprefixer({browsers: autoprefixBrowsers }))
 		.pipe(cleancss({level: { 1: { specialComments: 0 } } }))
 		.pipe(gulp.dest('src/css'))
 		.pipe(browsersync.reload({stream: true}))
