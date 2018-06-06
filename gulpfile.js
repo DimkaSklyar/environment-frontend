@@ -97,6 +97,12 @@ gulp.task('build', ['clean', 'img', 'sass', 'js'], function() {
 
 	var buildHtml = gulp.src('src/*.html') 
 	.pipe(gulp.dest('dist'));
+
+	var buildPhp = gulp.src('src/*.php') 
+	.pipe(gulp.dest('dist'));
+
+	var buildVideo = gulp.src('src/video/*')
+	.pipe(gulp.dest('dist/video'))
 });
 
 gulp.task('default', ['watch']);
