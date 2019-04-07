@@ -271,7 +271,7 @@ html {
 
 html {
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -1824,6 +1824,10 @@ html {
 }
 
 /*==========  user style  ==========*/
+.test {
+  color: #000;
+}
+
 /*==========  user style  ==========*/
 /*==========  Desktop First  ==========*/
 /*==========  Mobile First  ==========*/
