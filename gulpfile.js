@@ -22,13 +22,13 @@ gulp.task('browser-sync', function(done) {
 		notify: false 
 	});
 
-	 browsersync.watch('src').on('change', browsersync.reload);
+	browsersync.watch('src').on('change', browsersync.reload);
   
   done()
 });
 
 gulp.task('clean', function() {
-	return del.sync('dist'); // Удаляем папку dist перед сборкой
+	return del(['dist']); // Удаляем папку dist перед сборкой
 });
 
 gulp.task('img', function() {
@@ -89,18 +89,18 @@ gulp.task('clear', function (callback) {
 	return cache.clearAll();
 })
 
-gulp.task('build', gulp.series('clean', 'img', 'sass', 'js'), function() {
+gulp.task('build', gulp.series('clean','img', 'sass', 'js', function(done) {
 	var buildCss = gulp.src([ 
 		'src/css/*.css',
 		'src/css/*.min.css'
 		])
-	.pipe(gulp.dest('dist/css'))
+	.pipe(gulp.dest('dist/css'));
 
 	var buildFonts = gulp.src('src/fonts/**/*')
-	.pipe(gulp.dest('dist/fonts'))
+	.pipe(gulp.dest('dist/fonts'));
 
 	var buildJs = gulp.src('src/js/**/*') 
-	.pipe(gulp.dest('dist/js'))
+	.pipe(gulp.dest('dist/js'));
 
 	var buildHtml = gulp.src('src/*.html') 
 	.pipe(gulp.dest('dist'));
@@ -109,7 +109,8 @@ gulp.task('build', gulp.series('clean', 'img', 'sass', 'js'), function() {
 	.pipe(gulp.dest('dist'));
 
 	var buildVideo = gulp.src('src/video/*')
-	.pipe(gulp.dest('dist/video'))
-});
+	.pipe(gulp.dest('dist/video'));
+done();
+}));
 
 gulp.task('default', gulp.parallel('watch'));
