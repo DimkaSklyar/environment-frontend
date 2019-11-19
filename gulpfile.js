@@ -58,7 +58,7 @@ gulp.task('sass', function(){
 			suffix: ".min",
 			prefix: ""
 		}))
-		.pipe(autoprefixer({browsers: autoprefixBrowsers }))
+		.pipe(autoprefixer({overrideBrowserslist: autoprefixBrowsers }))
 		.pipe(cleancss({level: { 1: { specialComments: 0 } } }))
 		.pipe(gulp.dest('src/css'))
 		.pipe(browsersync.reload({stream: true}))
@@ -70,7 +70,7 @@ gulp.task('js', function() {
 			'src/libs/jquery/dist/jquery.min.js',
 			'src/js/common.js', // Always at the end
 			])
-		.pipe(concat('scripts.min.js'))
+		//.pipe(concat('scripts.min.js'))
 		// .pipe(uglify()) // Mifify js (opt.)
 		.pipe(gulp.dest('src/js'))
 		.pipe(browsersync.reload({ stream: true }))
@@ -79,7 +79,7 @@ gulp.task('js', function() {
 
 gulp.task('watch', gulp.series('sass','js','browser-sync', function(done) {
 	gulp.watch('src/sass/**/*.sass', gulp.parallel('sass'));
-	gulp.watch(['libs/**/*.js', 'src/js/common.js'], gulp.parallel('js'));
+	//gulp.watch(['libs/**/*.js', 'src/js/common.js'], gulp.parallel('js'));
 	gulp.watch('src/*.html');
   done();
 }));
