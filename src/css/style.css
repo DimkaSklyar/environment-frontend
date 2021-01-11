@@ -7657,7 +7657,11 @@ html {
   clip: auto;
 }
 
-/*==========  user style  ==========*/
+/*==========	user style	==========*/
+body {
+  font-family: 'Fira Code', monospace;
+}
+
 a {
   transition: .3s;
 }
@@ -7684,6 +7688,101 @@ ul {
   list-style: none;
 }
 
-/*==========  user style  ==========*/
+.body {
+  background-color: #262626;
+  color: #DADADA;
+  overflow: hidden;
+}
+
+.main {
+  height: 100vh;
+  position: relative;
+}
+
+.main h1 {
+  font-size: 68px;
+  position: relative;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  padding-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.main h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 120%;
+  background-color: #901717;
+}
+
+.main h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.header {
+  background-color: #1F1F1F;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  width: 75px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .nav__item {
+  margin: 25px 0;
+}
+
+.header .nav__link {
+  cursor: pointer;
+}
+
+.hv-100 {
+  height: 100vh;
+}
+
+.screen-center {
+  height: 100vh;
+  display: flex;
+}
+
+.screen-center_v {
+  align-items: center;
+}
+
+.gif {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.gif__img {
+  transform: scale(2);
+}
+
+#c {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*==========	user style	==========*/
 /*==========  Desktop First  ==========*/
 /*==========  Mobile First  ==========*/
