@@ -1,0 +1,20 @@
+$font: 'Roboto', sans-serif;
+
+$primary: #000;
+
+$font-size: 16px;
+
+$normal: 1rem;
+$small: 0.8666rem;
+$strong: 1.1333rem;
+$strong-medium: 1.2rem;
+$strong-large: 1.6rem;
+$title: 2rem;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+$gutter: $grid-gutter-width;

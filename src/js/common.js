@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-  alert('fe');
+  // alert('foo');
 })

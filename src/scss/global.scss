@@ -1,0 +1,6 @@
+@import "vars";
+
+* {box-sizing: border-box; margin-top: 0;}
+
+body, html {background: url('./../assets/images/background.png'); color: $primary; font-size: $font-size; font-family: $font; min-height: 100%; margin: 0; padding: 0;}
+
